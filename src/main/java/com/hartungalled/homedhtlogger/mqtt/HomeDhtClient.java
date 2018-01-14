@@ -1,10 +1,9 @@
-package com.hartungalled.homedhtlogger;
+package com.hartungalled.homedhtlogger.mqtt;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
 public class HomeDhtClient {
 
@@ -13,9 +12,6 @@ public class HomeDhtClient {
 
     public HomeDhtClient(String userName, String password, String clientId, String brokerUrl) {
 
-        String tmpDir = System.getProperty("java.io.tmpdir");
-        MqttDefaultFilePersistence dataStore = new MqttDefaultFilePersistence(tmpDir);
-
         try {
 
             connConfig = new MqttConnectOptions();
@@ -23,7 +19,7 @@ public class HomeDhtClient {
             connConfig.setUserName(userName);
             connConfig.setPassword(password.toCharArray());
 
-            client = new MqttClient(brokerUrl, clientId, dataStore);
+            client = new MqttClient(brokerUrl, clientId);
             client.setCallback(new MqttCallbackImpl());
 
         } catch (MqttException e) {

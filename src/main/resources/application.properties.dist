@@ -1,0 +1,11 @@
+spring.datasource.url =         # Use path to your db
+spring.datasource.username =    # Use your db username
+spring.datasource.password =    # Use your db password
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+
+# Enable spring data repos
+spring.data.jpa.repositories.enabled=true

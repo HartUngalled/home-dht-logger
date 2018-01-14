@@ -1,4 +1,4 @@
-package com.hartungalled.homedhtlogger;
+package com.hartungalled.homedhtlogger.mqtt;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
