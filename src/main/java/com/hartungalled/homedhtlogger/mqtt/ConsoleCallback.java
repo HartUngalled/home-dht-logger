@@ -7,7 +7,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.time.LocalDateTime;
 
-public class MqttCallbackImpl implements MqttCallback {
+public class ConsoleCallback implements MqttCallback {
 
     public void connectionLost(Throwable throwable) {
 

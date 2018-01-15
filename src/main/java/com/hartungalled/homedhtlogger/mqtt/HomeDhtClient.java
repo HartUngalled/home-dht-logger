@@ -20,7 +20,7 @@ public class HomeDhtClient {
             connConfig.setPassword(password.toCharArray());
 
             client = new MqttClient(brokerUrl, clientId);
-            client.setCallback(new MqttCallbackImpl());
+            client.setCallback(new PostCallback());
 
         } catch (MqttException e) {
 

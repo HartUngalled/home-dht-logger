@@ -22,7 +22,6 @@ public class Measurement {
     private Long id;
     @NonNull private Integer temperature;
     @NonNull private Integer humidity;
-
     @Column(columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP")
     private Date timestamp;
 

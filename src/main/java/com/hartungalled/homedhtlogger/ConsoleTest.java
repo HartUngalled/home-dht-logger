@@ -17,17 +17,13 @@ public class ConsoleTest implements CommandLineRunner {
 
     public static void main(String[] args) {
 
-//        testMqttConnection();
         SpringApplication.run(ConsoleTest.class, args);
+        testMqttConnection();
 
     }
 
     @Override
     public void run(String... strings) throws Exception {
-
-        Measurement measurement = new Measurement(24, 33);
-
-        measurementService.save(measurement);
     }
 
     public static void testMqttConnection() {
@@ -50,7 +46,6 @@ public class ConsoleTest implements CommandLineRunner {
 
         try {
 
-            client.publish(pubTopic, qos, message.getBytes());
             client.subscribe(subTopic, qos);
 
         } catch (MqttException e) {
