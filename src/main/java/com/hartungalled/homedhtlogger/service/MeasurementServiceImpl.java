@@ -17,4 +17,7 @@ public class MeasurementServiceImpl {
         measurementRepository.save(measurement);
     }
 
+    public List<Measurement> getAll() {
+        return measurementRepository.findAll();
+    }
 }
